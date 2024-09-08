@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <div class="img-card"></div>
+        <h1>Laptop Gamer AMD</h1>
+        <v2>Precio base: $400000</v2>
+        <div class="controls">
+            <h2>Cantidad: <span id="quantity">0</span></h2>
+            <button onclick="changeQuantity(-1)">-</button>
+            <button onclick="changeQuantity(1)">+</button>
+
+ 
+
+            
+        </div>
+    </div>
+
+    <div class="total-section">
+        <h2>Total a pagar: $<span id="total"></span></h2>
+       
+    </div>
+
+    <script>
+    const basePrice = 400000; 
+    let quantity = 0; 
+
+    function updateTotal() {
+        const totalElement = document.getElementById('total');
+        totalElement.textContent = (basePrice * quantity).toLocaleString();
+    }
+
+    function changeQuantity(amount) {
+        quantity += amount;
+        if (quantity < 0) quantity = 0; 
+        document.getElementById('quantity').textContent = quantity;
+        updateTotal();
+    }
+
+</script>
+    
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
+
+</html>
